@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 # using the password for connecting mysql
 load_dotenv()
 password = os.getenv('MYSQL_ROOT_PASSWORD')
-dbName = "db06"
+dbName = "English_Game"
 app = Flask(__name__)
 
 
