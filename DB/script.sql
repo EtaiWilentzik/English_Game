@@ -1,14 +1,14 @@
 set global local_infile=true;
-CREATE SCHEMA db06;
+CREATE SCHEMA English_Game;
 
-USE db06;
+USE English_Game;
 
 CREATE TABLE Word (
   `Word` VARCHAR(100) NOT NULL PRIMARY KEY,
   `Length` INT NOT NULL,
   `UseRate` INT NOT NULL);
 
-  CREATE TABLE User (
+CREATE TABLE User (
   `Username` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_bin  NOT NULL PRIMARY KEY,
   `Password` VARCHAR(30) NOT NULL,
   `Hakbatza` VARCHAR(1) NOT NULL,
@@ -33,34 +33,30 @@ CREATE TABLE UsedIn (
    `Index` BIGINT NOT NULL
 );
 
-
-LOAD DATA LOCAL INFILE 'C:/Users/sadna/Documents/Workshop in Data Management/team06/random_logs.csv'
+LOAD DATA LOCAL INFILE 'C:/Users/etaiw/PycharmProjects/English_Game/DB/random_logs.csv'
 INTO TABLE UserLog
 FIELDS TERMINATED BY ','
 IGNORE 1 LINES;
 
-LOAD DATA LOCAL INFILE 'C:/Users/sadna/Documents/Workshop in Data Management/team06/used in.csv'
+LOAD DATA LOCAL INFILE 'C:/Users/etaiw/PycharmProjects/English_Game/DB/used in.csv'
 INTO TABLE UsedIn
 FIELDS TERMINATED BY ','
 IGNORE 1 LINES;
 
-LOAD DATA LOCAL INFILE 'C:/Users/sadna/Documents/Workshop in Data Management/team06/words.csv'
+LOAD DATA LOCAL INFILE 'C:/Users/etaiw/PycharmProjects/English_Game/DB/words.csv'
 INTO TABLE Word
 FIELDS TERMINATED BY ','
 IGNORE 1 LINES;
 
-LOAD DATA LOCAL INFILE 'C:/Users/sadna/Documents/Workshop in Data Management/team06/random_users.csv'
+LOAD DATA LOCAL INFILE 'C:/Users/etaiw/PycharmProjects/English_Game/DB/random_users.csv'
 INTO TABLE User
 FIELDS TERMINATED BY ','
 IGNORE 1 LINES;
 
-LOAD DATA LOCAL INFILE 'C:/Users/sadna/Documents/Workshop in Data Management/team06/context.csv'
+LOAD DATA LOCAL INFILE 'C:/Users/etaiw/PycharmProjects/English_Game/DB/context.csv'
 INTO TABLE Context
 FIELDS TERMINATED BY '>'
 IGNORE 1 LINES;
-
-
-
 
 CREATE INDEX UserIndex ON User (Username);
 CREATE INDEX userLogIndex ON userlog (username, `Date`);
@@ -68,7 +64,6 @@ CREATE INDEX Word_Index ON Word (useRate ASC);
 CREATE INDEX ContextIndex ON context (example(255) DESC);
 CREATE INDEX ContextIndex2 ON context (Size Desc);
 CREATE INDEX usedinIndex ON usedin (word, `index`);
-
 
 ALTER TABLE UsedIn
 ADD FOREIGN KEY (`Word`) REFERENCES Word(`word`);
