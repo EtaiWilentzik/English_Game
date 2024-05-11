@@ -1,0 +1,96 @@
+body {
+  background-color: #282c34;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+input,
+select,
+button {
+  margin: 1vh;
+  padding: 1vh;
+  font-size: 3vh;
+  border-radius: 10px;
+
+}
+
+button {
+  background-color: #61dafb;
+  color: #282c34;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #4fa3d1;
+}
+
+h1, h2, p {
+  color: #61dafb;
+}
+
+input,
+select {
+  background-color: #2d333b;
+  color: white;
+  border: 1px solid #4fa3d1;
+}
+
+input::placeholder {
+  color: #6b6b6b;
+}
+
+select option {
+  background-color: #2d333b;
+  color: white;
+}
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
