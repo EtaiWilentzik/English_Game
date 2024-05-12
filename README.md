@@ -155,7 +155,7 @@ Additionally, there is a "Remove All My Data" button that allows me to delete al
 ### Backend 
 - Python
 - flask
-## Authors
+## Author
 **Etai Wilentzik**
 * [Profile](https://github.com/EtaiWilentzik )
 ## Copyright
