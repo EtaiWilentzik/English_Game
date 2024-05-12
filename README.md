@@ -146,6 +146,7 @@ Below the two tables, there is a third table showing my last five games. This ta
 Additionally, there is a "Remove All My Data" button that allows me to delete all records of my games. This action does not unregister the player but deletes all game records. The tables and records above will be updated accordingly.
 
 </small>
+
 ## Built with
 ### Frontend
 - CSS
